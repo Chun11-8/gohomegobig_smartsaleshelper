@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269300585703",
+    "project_id": "smartsaleshelper",
+    "storage_bucket": "smartsaleshelper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269300585703:android:5bd57f7b2bbc5a8c507e42",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbNzwhkYJpYWuq2y7U06L0vuJUNOqxYlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
