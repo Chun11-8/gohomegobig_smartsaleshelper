@@ -1,0 +1,257 @@
+$pfp-size: 49px;
+$album-icon-size: 48px;
+$music-span-width: 190px;
+$like-anim-timing: 0.35s ease-in-out;
+
+.video-component-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	color: #fff;
+
+	.video-container {
+		width: 100%;
+		height: 100%;
+
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			background: #000;
+		}
+
+		.spinner-cont {
+			position: absolute;
+			inset: 0;
+			z-index: 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: rgba(0, 0, 0, 0.3);
+
+			.spinner {
+				--circle-size: 20px;
+			}
+		}
+	}
+
+	.video-content {
+		pointer-events: none;
+		transition: opacity 0.1s ease-out;
+
+		.play-btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-size: 3.5rem;
+			transform: translate(-50%, -50%);
+			text-shadow: 0 0 1px #000;
+		}
+
+		aside {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			right: 10px;
+			bottom: 110px;
+			z-index: 3;
+			height: 300px;
+
+			.rounded-photo {
+				width: $pfp-size;
+				height: $pfp-size;
+				pointer-events: auto;
+				box-shadow: 0 0 1px 0px #000;
+			}
+
+			.action-btns {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 16px;
+				margin-top: 24px;
+				font-size: 2.1rem;
+				text-shadow: 0 0 1px #000;
+
+				> div {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					i {
+						pointer-events: auto;
+					}
+
+					.fa-heart {
+						transition: color $like-anim-timing;
+
+						&.liked {
+							color: var(--clr-primary);
+							animation: like-anim $like-anim-timing;
+						}
+					}
+
+					span {
+						font-size: 0.9rem;
+					}
+				}
+			}
+
+			.options-btn {
+				position: relative;
+				pointer-events: auto;
+
+				.fa-ellipsis-h {
+					font-size: 1.5rem;
+				}
+
+				.options-dd {
+					top: 0;
+					right: 120%;
+					bottom: unset;
+					width: unset;
+					font-size: 0.85rem;
+					font-weight: 400;
+					z-index: 10;
+
+					p {
+						color: var(--clr-text);
+						display: flex;
+						align-items: baseline;
+						gap: 8px;
+						padding: 6px 16px;
+					}
+				}
+			}
+		}
+
+		.video-info-wrapper {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			z-index: 5;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+			height: 180px;
+			font-size: 0.85rem;
+			pointer-events: none;
+		}
+
+		.video-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			padding: 0 10px 12px;
+		}
+
+		.info-container {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			width: 274px;
+			line-height: 1rem;
+
+			.username {
+				font-weight: 600;
+				pointer-events: auto;
+				font-size: 0.9rem;
+			}
+
+			.tags {
+				display: flex;
+				gap: 4px;
+
+				a {
+					font-weight: 500;
+					pointer-events: auto;
+
+					&:active {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.views {
+				display: flex;
+				gap: 6px;
+				align-items: center;
+			}
+
+			.music-container {
+				white-space: nowrap;
+				overflow: hidden;
+				display: flex;
+				gap: 8px;
+			}
+
+			span {
+				display: inline-block;
+			}
+
+			.music {
+				overflow: hidden;
+
+				p {
+					animation: music-anim 3s linear 0s infinite normal none paused;
+					width: max-content;
+				}
+
+				span {
+					padding-right: 12px;
+					width: $music-span-width;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.album-icon {
+			background: url(https://lf16-tiktok-web.ttwstatic.com/obj/tiktok-web-us/tiktok/web/node/_next/static/images/album-628a1f27c2ed684e4454d53f4c042f7a.svg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: $album-icon-size;
+			height: $album-icon-size;
+			pointer-events: auto;
+			flex-shrink: 0;
+			animation: album-anim 8s linear 0s infinite normal none paused;
+
+			img {
+				width: calc(0.5625 * #{$album-icon-size});
+				height: calc(0.5625 * #{$album-icon-size});
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+@keyframes music-anim {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-$music-span-width, 0);
+	}
+}
+
+@keyframes album-anim {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes like-anim {
+	50% {
+		transform: scale(1.5) rotateY(180deg);
+	}
+}
