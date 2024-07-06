@@ -1,0 +1,137 @@
+$header-height: 44px;
+$pfp-size: 96px;
+
+.profile-page {
+	overflow: auto;
+	color: var(--clr-text);
+	background: var(--clr-background);
+
+	.profile-header {
+		text-align: center;
+		border-bottom: 2px solid var(--clr-border);
+
+		header {
+			display: flex;
+			height: $header-height;
+			line-height: $header-height;
+			font-size: 17px;
+			font-weight: 600;
+			padding: 0 18px;
+			border-bottom: 2px solid var(--clr-border);
+
+			> div {
+				width: 24px;
+			}
+
+			h4 {
+				flex: 1 1 0%;
+				padding: 0 12px;
+			}
+		}
+
+		.user-info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 12px;
+			padding: 12px 0;
+
+			.rounded-photo {
+				width: $pfp-size;
+				height: $pfp-size;
+			}
+
+			h4 {
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+
+			ul {
+				display: flex;
+				width: 100%;
+				padding: 0 46px;
+
+				li {
+					display: flex;
+					flex-direction: column;
+					width: 33.33%;
+					line-height: 1.1rem;
+				}
+
+				.show-divider {
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						top: 50%;
+						right: 0;
+						background-color: rgba(var(--clr-secondary-values), 0.25);
+						width: 2px;
+						height: 16px;
+						transform: translateY(-50%) scaleX(0.5);
+					}
+				}
+
+				span {
+					color: rgba(var(--clr-secondary-values), 0.6);
+					font-size: 0.8rem;
+				}
+			}
+
+			button {
+				width: 164px;
+				height: 44px;
+				font-size: 0.9rem;
+				margin: 6px 0;
+			}
+
+			.description {
+				font-size: 0.85rem;
+				padding: 0 40px;
+			}
+		}
+	}
+
+	.video-buttons {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		position: sticky;
+		top: 0;
+		z-index: 5;
+		background-color: var(--clr-background);
+		height: 40px;
+		width: 100%;
+		border-bottom: 2px solid var(--clr-border);
+		margin-bottom: 1px;
+
+		button {
+			font-size: 1.2rem;
+			color: rgba(var(--clr-secondary-values), 0.3);
+			height: 95%;
+			padding: 0 12px;
+
+			&.active {
+				color: rgba(var(--clr-secondary-values), 0.8);
+				box-shadow: 0 2px 0 0 rgba(var(--clr-secondary-values), 0.8);
+			}
+		}
+	}
+
+	.videos-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1px;
+
+		&.ungrid {
+			display: block;
+		}
+	}
+
+	.no-videos {
+		text-align: center;
+		margin-top: 20px;
+		color: rgba(var(--clr-secondary-values), 0.7);
+	}
+}
