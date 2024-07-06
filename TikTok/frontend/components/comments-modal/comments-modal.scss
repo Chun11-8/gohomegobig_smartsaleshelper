@@ -1,0 +1,257 @@
+$pfp-size: 32px;
+$transition-timings: 0.2s ease-out;
+
+.comments-backdrop {
+	z-index: 11;
+	opacity: 0;
+	transition: opacity $transition-timings;
+
+	&.show {
+		opacity: 1;
+	}
+
+	&.hide {
+		opacity: 0;
+	}
+}
+
+.comments-modal-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 12;
+	display: flex;
+	flex-direction: column;
+	height: 73%;
+	padding: 12px 0 0;
+	pointer-events: auto;
+	background: var(--clr-bg-elevation-1, var(--clr-background));
+	box-shadow: var(--shadows, 0 0 10px 5px var(--clr-shadow));
+	color: var(--clr-text);
+	border-radius: 12px 12px 0 0;
+	font-size: 0.75rem;
+	transform: translateY(100%);
+	transition: transform $transition-timings;
+
+	&.reveal {
+		transform: translateY(0);
+	}
+
+	&.hide {
+		transform: translateY(100%);
+	}
+
+	&.unauthed {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		text-align: center;
+		height: unset;
+		padding: 16px 20px 20px;
+
+		.image-container {
+			width: 48px;
+			height: 48px;
+			align-self: center;
+		}
+
+		h3 {
+			font-weight: 600;
+			font-size: 1.2rem;
+		}
+
+		p {
+			color: rgba(var(--clr-secondary-values), 0.5);
+			font-size: 0.8rem;
+		}
+
+		button {
+			margin-top: 4px;
+			font-size: 1rem;
+		}
+	}
+
+	.spinner {
+		--circle-size: 16px;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		padding: 0 12px;
+
+		p {
+			flex: 1 1 0%;
+			text-align: center;
+		}
+
+		span {
+			width: 20px;
+
+			i {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
+	.comments-container {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 20px 0;
+		height: 100%;
+		max-height: 100%;
+		overflow: auto;
+		overscroll-behavior: contain;
+	}
+
+	.comment-box {
+		display: flex;
+		gap: 8px;
+		width: 100%;
+		padding: 0 16px;
+
+		&.reply-box {
+			padding: 0;
+		}
+
+		.comment-content {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			width: 100%;
+		}
+
+		.info-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+		}
+
+		.comment-info {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			line-height: 0.75rem;
+
+			h4 {
+				display: flex;
+				align-items: baseline;
+				gap: 4px;
+				font-weight: 600;
+
+				span {
+					color: var(--clr-primary);
+					font-size: 0.7rem;
+					font-weight: 400;
+				}
+			}
+
+			p {
+				font-size: 0.85rem;
+				line-height: 0.85rem;
+			}
+
+			.time-reply {
+				display: flex;
+				gap: 8px;
+				margin-top: 2px;
+				color: rgba(var(--clr-secondary-values), 0.6);
+			}
+		}
+
+		.buttons-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			color: rgba(var(--clr-secondary-values), 0.6);
+
+			> div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.options-container {
+				position: relative;
+				padding-bottom: 4px;
+
+				.dropdown {
+					top: 30%;
+					bottom: unset;
+					right: 110%;
+					z-index: 12;
+					width: unset;
+					font-size: 0.75rem;
+
+					span {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+						padding: 4px 12px;
+
+						i {
+							font-size: 0.9rem;
+						}
+					}
+				}
+			}
+
+			i {
+				font-size: 1.1rem;
+
+				&.liked {
+					color: var(--clr-primary);
+				}
+			}
+		}
+	}
+
+	.rounded-photo {
+		width: $pfp-size;
+		height: $pfp-size;
+		flex-shrink: 0;
+	}
+
+	.add-comment-container {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 8px 12px;
+		width: 100%;
+		border-top: 1px solid var(--clr-border);
+
+		button {
+			border-radius: 50%;
+			width: 32px;
+			height: 32px;
+			padding: 0;
+			flex-shrink: 0;
+			font-size: 0.9rem;
+
+			&.cancel-reply {
+				width: 31px;
+				height: 31px;
+				border: 1px solid rgba(var(--clr-secondary-values), 0.7);
+				color: rgba(var(--clr-secondary-values), 0.7);
+			}
+		}
+	}
+
+	.trigger-replies {
+		color: rgba(var(--clr-secondary-values), 0.5);
+		font-weight: 600;
+		font-size: 0.7rem;
+	}
+
+	.replies-container {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 16px 0;
+	}
+}
