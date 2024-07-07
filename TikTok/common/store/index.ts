@@ -4,8 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./slices/auth-slice";
 import notificationReducer from "./slices/notification-slice";
 import authModalReducer from "./slices/auth-modal-slice";
-import PCReducer from "../../pc/store";
-import MobileReducer from "../../mobile/store";
+import MobileReducer from "../../frontend/store";
 
 const store = configureStore({
 	reducer: {

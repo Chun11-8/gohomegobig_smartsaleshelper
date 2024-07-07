@@ -1,14 +1,9 @@
 import { ReactNode, useCallback } from "react";
 import SwiperType from "swiper";
-import {
-	Swiper,
-	SwiperProps,
-	SwiperSlide,
-	SwiperSlideProps
-} from "swiper/react/swiper-react";
+import "swiper/react/swiper-react";
 import "swiper/swiper.scss";
 
-import classes from "./swiper.module.scss";
+import "./swiper.module.scss";
 import { joinClasses } from "../../../common/utils";
 
 interface Props {
