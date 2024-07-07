@@ -1,0 +1,150 @@
+$default-fonts: "Poppins", Arial, Tahoma, sans-serif, "Segoe UI Emoji",
+	"Noto Emoji";
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base light theme class for the website. Define everything light-theme related in this class and *nowhere* else. The class is added to the root (html) tag. */
+
+:root.light {
+	--clr-background: #ffffff;
+	--clr-shadow-values: 0, 0, 0;
+	--clr-shadow: rgba(var(--clr-shadow-values), 0.12);
+	--clr-border: #e5e6e7;
+
+	--clr-primary-values: 254, 44, 85;
+	--clr-primary: rgb(var(--clr-primary-values));
+
+	--clr-secondary-values: 22, 24, 35;
+	--clr-secondary: rgb(var(--clr-secondary-values));
+
+	--clr-text: rgb(var(--clr-secondary-values));
+
+	--clr-scrollbar-thumb: rgba(var(--clr-primary-values), 0.85);
+	--clr-scrollbar-track: rgba(var(--clr-secondary-values), 0.25);
+}
+
+/* light theme end */
+
+/* Base dark theme class for the website. Define everything dark-theme related in this class and *nowhere* else. The class is added to the root (html) tag. */
+
+:root.dark {
+	--clr-background: #181a1b;
+	--clr-shadow-values: 255, 255, 255;
+	--clr-shadow: rgba(var(--clr-shadow-values), 0.2);
+	--clr-border: #494949;
+
+	--clr-primary-values: 254, 44, 85;
+	--clr-primary: rgb(var(--clr-primary-values));
+
+	--clr-secondary-values: 214, 210, 205;
+	--clr-secondary: rgb(var(--clr-secondary-values));
+
+	--clr-text: rgb(var(--clr-secondary-values));
+
+	--clr-scrollbar-thumb: rgba(var(--clr-primary-values), 0.85);
+	--clr-scrollbar-track: rgb(65, 65, 65);
+
+	--clr-bg-elevation-1: #232425;
+	--clr-bg-elevation-2: #373838;
+
+	--logo-filter: invert(1);
+	--shadows: none;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	background-color: var(--clr-background);
+}
+
+body {
+	font-family: $default-fonts;
+}
+
+button {
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	border: none;
+	color: inherit;
+	cursor: pointer;
+	user-select: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	font-size: inherit;
+}
+
+input {
+	font-family: inherit;
+	border: none;
+	background: none;
+	color: inherit;
+	outline: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img,
+video {
+	object-fit: cover;
+	object-position: center;
+	user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+}
+
+.image-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.rounded-photo {
+	border-radius: 50%;
+	overflow: hidden;
+
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.break-word {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	word-break: break-word;
+}
+
+.backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	user-select: none;
+}
