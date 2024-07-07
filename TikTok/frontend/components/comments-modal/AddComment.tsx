@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 import "./comments-modal.scss";
-import Input from "../../../common/components/input-field";
+import Input from "../../../frontend/components/input-field";
 import constants from "../../../common/constants";
 import { useAppDispatch, useAppSelector } from "../../../common/store";
 import { errorNotification } from "../../helpers/error-notification";
