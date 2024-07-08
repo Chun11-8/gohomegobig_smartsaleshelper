@@ -1,10 +1,20 @@
 import { ReactNode, useCallback } from "react";
-import SwiperType from "swiper";
-import "swiper/react/swiper-react";
+// import SwiperType from "swiper";
+// import {
+// 	Swiper,
+// 	SwiperProps,
+// 	SwiperSlide,
+// 	SwiperSlideProps
+// } from "swiper/react/swiper-react";
 import "swiper/swiper.scss";
 
-import "./swiper.module.scss";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperProps, SwiperSlideProps } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper';
+
+import classes from "./swiper.module.scss";
 import { joinClasses } from "../../../common/utils";
+import { Virtual } from 'swiper/modules';
 
 interface Props {
 	containerClassName?: string;
@@ -44,6 +54,7 @@ export default function SwiperComponent({
 
 	return (
 		<Swiper
+			modules={[Virtual]}
 			direction="vertical"
 			className={joinClasses(classes["swiper-container"], containerClassName)}
 			onSlideChange={handleSlideChange}
