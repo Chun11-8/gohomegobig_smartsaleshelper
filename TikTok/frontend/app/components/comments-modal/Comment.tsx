@@ -5,7 +5,7 @@ import Reply from "./Reply";
 import { CommentData } from "../../common/types";
 import constants from "../../common/constants";
 import { convertToDate, joinClasses } from "../../common/utils";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { useAppDispatch, useAppSelector } from "../../common/store";
 import {
 	deleteComment,

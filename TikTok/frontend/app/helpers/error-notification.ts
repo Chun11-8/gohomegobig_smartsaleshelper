@@ -1,5 +1,5 @@
-import { notificationActions } from "../app/common/store/slices/notification-slice";
-import { useAppDispatch } from "../app/common/store";
+import { notificationActions } from "../../app/common/store/slices/notification-slice";
+import { useAppDispatch } from "../../app/common/store";
 
 export async function errorNotification(
 	fn: () => any,

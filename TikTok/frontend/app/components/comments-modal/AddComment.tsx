@@ -6,7 +6,7 @@ import "./comments-modal.scss";
 import Input from "../../common/components/input-field";
 import constants from "../../common/constants";
 import { useAppDispatch, useAppSelector } from "../../common/store";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { postComment, reply } from "../../common/api/video";
 import { notificationActions } from "../../common/store/slices/notification-slice";
 import { CommentData } from "../../common/types";

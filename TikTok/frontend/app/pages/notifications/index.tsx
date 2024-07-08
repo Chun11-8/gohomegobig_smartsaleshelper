@@ -5,7 +5,7 @@ import "./notifications.scss";
 import UnauthedPage from "../../components/unauthed-page";
 import NotificationBox from "../../components/notification-box";
 import { useAppDispatch, useAppSelector } from "../../common/store";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { UserNotification } from "../../common/types";
 import { getCustom, readAllNotifs } from "../../common/api/user";
 import LoadingSpinner from "../../common/components/loading-spinner";

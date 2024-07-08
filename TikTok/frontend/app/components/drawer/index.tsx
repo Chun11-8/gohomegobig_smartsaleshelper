@@ -4,7 +4,7 @@ import "./drawer.scss";
 import AccountBox from "./AccountBox";
 import LoadingSpinner from "../../common/components/loading-spinner";
 import { UserData } from "../../common/types";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { useAppDispatch, useAppSelector } from "../../common/store";
 import { getSuggested } from "../../common/api/feed";
 import { getCustom } from "../../common/api/user";

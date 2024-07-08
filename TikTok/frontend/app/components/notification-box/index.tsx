@@ -5,7 +5,7 @@ import classes from "./notification-box.module.scss";
 import { UserNotification } from "../../common/types";
 import constants from "../../common/constants";
 import { convertToDate, joinClasses } from "../../common/utils";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { useAppDispatch, useAppSelector } from "../../common/store";
 import { deleteNotif } from "../../common/api/user";
 import { notificationActions } from "../../common/store/slices/notification-slice";

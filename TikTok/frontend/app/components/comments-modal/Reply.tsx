@@ -6,7 +6,7 @@ import constants from "../../common/constants";
 import { convertToDate, joinClasses } from "../../common/utils";
 import { deleteReply, likeReply } from "../../common/api/video";
 import { useAppDispatch, useAppSelector } from "../../common/store";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { LikesInfo } from "./Comment";
 import { notificationActions } from "../../common/store/slices/notification-slice";
 import Dropdown from "../../common/components/dropdown";
