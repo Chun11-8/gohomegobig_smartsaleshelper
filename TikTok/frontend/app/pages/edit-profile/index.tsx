@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 import PageWithNavbar from "../../components/page-with-navbar";
-import "./edit-profile.scss";
+import "./edit-photo.scss";
 import { UserData } from "../../common/types";
 import Input from "../../common/components/input-field";
 import FullscreenSpinner from "../../common/components/fullscreen-spinner";

@@ -1,4 +1,5 @@
 import { ReactNode, useCallback } from "react";
+import { Swiper as SwiperType } from 'swiper';
 // import SwiperType from "swiper";
 // import {
 // 	Swiper,
@@ -6,12 +7,12 @@ import { ReactNode, useCallback } from "react";
 // 	SwiperSlide,
 // 	SwiperSlideProps
 // } from "swiper/react/swiper-react";
-import "swiper/swiper.scss";
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SwiperProps, SwiperSlideProps } from 'swiper/react';
-import { Swiper as SwiperType } from 'swiper';
 
+import "swiper/swiper.scss";
 import classes from "./swiper.module.scss";
 import { joinClasses } from "../../common/utils";
 import { Virtual } from 'swiper/modules';

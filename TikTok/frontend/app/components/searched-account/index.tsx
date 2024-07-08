@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import classes from "./searched-account.module.scss";
+import classes from "./search-account.module.scss";
 import { UserData } from "../../common/types";
 import { joinClasses } from "../../common/utils";
 import constants from "../../common/constants";
