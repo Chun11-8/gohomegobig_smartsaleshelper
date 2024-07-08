@@ -219,7 +219,7 @@ export default function Video(props: VideoData) {
 								className="fas fa-comment-dots"
 								onClick={() => setShowComments(true)}
 							/>
-							<span>{props.comments}</span>
+							<span>{props.comments?.toString()}</span>
 						</div>
 						<div className="options-btn">
 							{username === props.uploader!.username ? (

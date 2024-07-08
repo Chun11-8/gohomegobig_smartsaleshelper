@@ -5,7 +5,7 @@ import PageWithNavbar from "../../components/page-with-navbar";
 import "./video.scss";
 import Video from "../../components/video";
 import { VideoData } from "../../common/types";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { useAppDispatch, useAppSelector } from "../../common/store";
 import { getVideo } from "../../common/api/video";
 import Swiper from "../../components/swiper";

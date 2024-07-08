@@ -146,7 +146,7 @@ export default function Profile({ isOwn }: Props) {
 							<h4>@{user.username}</h4>
 							<ul>
 								<li className="show-divider">
-									<strong>{user.following}</strong>
+									<strong>{followData.totalFollowers.toString()}</strong>
 									<span>Following</span>
 								</li>
 								<li className="show-divider">
