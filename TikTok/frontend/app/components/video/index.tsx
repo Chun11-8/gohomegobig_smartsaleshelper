@@ -8,7 +8,7 @@ import CommentsModal from "../comments-modal";
 import Dropdown from "../../common/components/dropdown";
 import { VideoData } from "../../common/types";
 import constants from "../../common/constants";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { useAppDispatch, useAppSelector } from "../../common/store";
 import { notificationActions } from "../../common/store/slices/notification-slice";
 import { deleteVideo, likeVideo, share } from "../../common/api/video";

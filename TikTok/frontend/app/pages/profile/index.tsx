@@ -7,7 +7,7 @@ import PageWithNavbar from "../../components/page-with-navbar";
 import { UserData } from "../../common/types";
 import constants from "../../common/constants";
 import { useAppDispatch, useAppSelector } from "../../common/store";
-import { errorNotification } from "../../../helpers/error-notification";
+import { errorNotification } from "../../helpers/error-notification";
 import { followUser, getLikedVideos, getUser } from "../../common/api/user";
 import LoadingSpinner from "../../common/components/loading-spinner";
 import { joinClasses } from "../../common/utils";
