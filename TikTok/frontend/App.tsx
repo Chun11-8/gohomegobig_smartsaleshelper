@@ -1,11 +1,11 @@
 import { useEffect, Suspense, lazy } from "react";
 
 import "./frontend/app/common/styles.scss";
-import { authActions } from "./frontend/app/common/store/slices/auth-slice";
-import { useAppDispatch, useAppSelector } from "./frontend/app/common/store";
-import FullscreenSpinner from "./frontend/app/common/components/fullscreen-spinner";
-import constants from "./frontend/app/common/constants";
-const MobileLayout = lazy(() => import("./frontend/app"));
+import { authActions } from "./app/common/store/slices/auth-slice";
+import { useAppDispatch, useAppSelector } from "./app/common/store";
+import FullscreenSpinner from "./app/common/components/fullscreen-spinner";
+import constants from "./app/common/constants";
+const MobileLayout = lazy(() => import("./app/"));
 
 export default function App() {
 	const dispatch = useAppDispatch();
